@@ -1,4 +1,5 @@
 .header__wrapper {
+  position: sticky;
   display: flex;
   flex-direction: column;
 }
@@ -169,6 +170,7 @@
   letter-spacing: 2px;
   padding: 10px 0;
   transition: 0.3s;
+  width: 138px;
 }
 
 .action__btn:hover {
@@ -186,6 +188,7 @@
   letter-spacing: 2px;
   padding: 10px 0;
   transition: 0.3s;
+  width: 138px;
 }
 
 .header__img {

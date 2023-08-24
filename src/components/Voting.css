@@ -1,0 +1,220 @@
+.search__input {
+  width: 470px;
+  height: 60px;
+  border-radius: 20px;
+  background: #fff;
+  padding-left: 20px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  color: var(--black);
+  font-size: 20px;
+  line-height: 30px; 
+}
+
+.search__input::placeholder {
+  color: var(--light-grey);
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.search__input:hover {
+  border: 2px solid var(--light-coral);
+}
+
+.search__input:focus {
+  border: 2px solid var(--coral);
+}
+
+.searchbar {
+  position: relative;
+}
+
+.search__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--light-coral);
+  transition: 0.3s ease-in-out;
+  background-image: url(/public/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search__btn:hover {
+  background: var(--coral);
+  background-image: url(/public/searchwhite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search__btn:hover svg {
+  fill: #fff;
+}
+
+.topmenu_btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+.topmenu_btn:hover {
+  background: var(--light-coral);
+}
+
+.topmenu_btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.topmenu {
+  display: flex;
+  gap: 10px;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.voting__img {
+  width: 640px;
+  height: 360px;
+  border-radius: 20px;
+}
+
+.img__container {
+  position: relative;
+  margin-bottom: 52px;
+}
+
+.votes__container {
+  position: absolute;
+  width: 240px;
+  height: 80px;
+  display: flex;
+  border-radius: 20px;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.votes__btn-like {
+  background-color: #97EAB9;
+  border-radius: 20px 0 0px 20px;
+  width: 83px;
+  height: 80px;
+  border-width: 3px 2px 3px 3px ;
+  border-color: #fff;
+  border-style: solid;
+  background-image: url(/public/likewhite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+
+.votes__btn-like:hover {
+  background-image: url(/public/like-color-30.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e0f9ea;
+}
+
+.votes__btn-fav {
+  background-color: var(--coral);
+  width: 83px;
+  height: 80px;
+  border-width: 3px 2px 3px 2px;
+  border-color: #fff;
+  border-style: solid;
+  background-image: url(/public/fav-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+
+.votes__btn-fav:active {
+  background-image: url(/public/fav-full-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.votes__btn-fav:hover {
+  background-image: url(/public/fav-color-30.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--light-coral);
+}
+
+.votes__btn-dislike {
+  background-color: #FFD280;
+  border-radius: 0 20px 20px 0;
+  width: 83px;
+  border-width: 3px 3px 3px 2px ;
+  height: 80px;
+  border-color: #fff;
+  border-style: solid;
+  background-image: url(/public/dislikewhite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+
+.votes__btn-dislike:hover {
+  background-image: url(/public/dislike-color-30.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff2d9;
+}
+
+.logs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.log__wrapper {
+  width: 100%;
+  height: 60px;
+  background: #F8F8F7;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+
+.time {
+  border-radius: 5px;
+  background: #fff;
+  color: var(--black);
+  font-size: 16px;
+  line-height: 24px; 
+  padding: 3px 10px;
+}
+
+.log__wrapper h4 {
+  text-align: left;
+  width: 490px;
+  font-weight: 400;
+  color: #8C8C8C; 
+}
+
+.id {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.log__wrapper img {
+  width: 20px;
+}
+
+

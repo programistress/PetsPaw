@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type ActionProps = {
   readonly src: string;
@@ -9,6 +10,7 @@ type ActionProps = {
   readonly isActive: boolean;
   readonly onClick: () => void;
   readonly name: string;
+  readonly link: string;
 };
 
 export function ActionItem(props: ActionProps){
@@ -21,16 +23,21 @@ export function ActionItem(props: ActionProps){
     backgroundClassName,
     backgroundClassNameActive,
     onClick,
+    link
   } = props;
   return (
     <div className="action" {...{ onClick }}>
+      <Link to={link}>
       <div className={isActive ? backgroundClassNameActive : backgroundClassName}>
         <img {...{ src, alt }}  
         className={ isActive ? 'active__img' : imageClassName} />
       </div>
-      <button  className={isActive ? 'active__btn' : 'action__btn'}>
+      </Link>
+      <Link to={link}>
+      <button className={isActive ? 'active__btn' : 'action__btn'}>
         {name}
       </button>
+      </Link>
     </div>
   );
 };

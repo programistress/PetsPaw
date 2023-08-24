@@ -10,6 +10,7 @@ const data = [
     backgroundClassName: 'voting__bg',
     backgroundClassNameActive: 'voting__bg-active',
     imageClassName: 'action__img-voting',
+    link: '/voting',
   },
   {
     src: '/breeds-img.png',
@@ -18,6 +19,7 @@ const data = [
     backgroundClassName: 'breeds__bg',
     backgroundClassNameActive: 'breeds__bg-active',
     imageClassName: 'action__img-breeds',
+    link: '/breeds',
   },
   {
     src: '/gallery-img.png',
@@ -26,6 +28,7 @@ const data = [
     backgroundClassName: 'gallery__bg',
     backgroundClassNameActive: 'gallery__bg-active',
     imageClassName: 'action__img-gallery',
+    link: '/gallery',
   },
 ]
 
@@ -33,7 +36,7 @@ const Actions = () => {
   const [activeAction, setActiveAction] = useState<string | null>(null);
   return (
     <div className='action__wrapper'>
-      {data.map(({ alt, name, src, backgroundClassName, imageClassName, backgroundClassNameActive }) => (
+      {data.map(({ alt, name, src, backgroundClassName, imageClassName, backgroundClassNameActive, link }) => (
         <ActionItem
           src={src}
           alt={alt}
@@ -43,6 +46,7 @@ const Actions = () => {
           imageClassName={imageClassName}
           isActive={name === activeAction}
           onClick={() => setActiveAction(name)}
+          link={link}
         />
         ))}
       {/* need to change export to svg for better quality */}
