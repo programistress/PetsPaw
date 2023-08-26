@@ -9,17 +9,17 @@ const TopMenu = () => {
       <button className='search__btn'>
       </button>
       </div>
-      <Link to={`/`}>
+      <Link to={`/likes`}>
         <button className='topmenu_btn'>
           <img src="/like.svg" alt="" />
         </button>
       </Link>
-      <Link to={`/`}>
+      <Link to={`/favorites`}>
         <button className='topmenu_btn'>
           <img src="/heart.svg" alt="" />
         </button>
       </Link>
-      <Link to={`/`}>
+      <Link to={`/dislikes`}>
         <button className='topmenu_btn'>
           <img src="/dislike.svg" alt="" />
         </button>

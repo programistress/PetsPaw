@@ -1,0 +1,37 @@
+.top__section {
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown__btn {
+  border-radius: 10px;
+  background: #F8F8F7;
+  color: #8C8C8C;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.breeds {
+  width: 226px;
+  height: 40px;
+}
+
+.limit {
+  width: 101px;
+  height: 40px;
+}
+
+.alphabet__btn {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #F8F8F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}

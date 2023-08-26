@@ -1,19 +1,17 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
-import BreedsDisplay from '../components/Breeds/BreedsDisplay'
 
-const BreedsElement = () => {
-
+const Favorites = () => {
   return (
     <div className='wrapper'>
       <StickyHeader />
       <div className='flexcolumn'>
-       <TopMenu />
-       <BreedsDisplay /> 
+      <TopMenu />
+
       </div>
     </div>
   )
 }
 
-export default BreedsElement
+export default Favorites

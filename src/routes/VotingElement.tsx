@@ -1,8 +1,8 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
-import '../components/Voting.css'
-import VotingDisplay from '../components/VotingDisplay'
+import '../components/Voting/Voting.css'
+import VotingDisplay from '../components/Voting/VotingDisplay'
 
 const VotingElement = () => {
   return (

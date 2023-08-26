@@ -1,6 +1,7 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
+import GalleryDisplay from '../components/Gallery/GalleryDisplay'
 
 const GalleryElement = () => {
   return (
@@ -8,10 +9,11 @@ const GalleryElement = () => {
      <StickyHeader />
      <div className='flexcolumn'>
      <TopMenu />
-     {/* <GalleryDisplay /> */}
+     <GalleryDisplay />
      </div>
     </div>
   )
 }
 
 export default GalleryElement
+
