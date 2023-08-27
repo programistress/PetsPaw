@@ -80,7 +80,7 @@ const VotingDisplay = () => {
     }
 
   return (
-    <div className='action__display-wrapper-voting'>
+    <div className='action__display-wrapper'>
       <ActionHeader title='voting' />
       <div className="img__container">
         <img key={activeIndex} className='voting__img' src={imgs[activeIndex]} alt="" />
