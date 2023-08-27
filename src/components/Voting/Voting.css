@@ -58,7 +58,6 @@
   background-position: center;
 }
 
-
 .topmenu_btn {
   width: 60px;
   height: 60px;
@@ -105,6 +104,9 @@
 }
 
 .voting__img-next {
+  width: 640px;
+  height: 360px;
+  border-radius: 20px;
   position: absolute;
   opacity: 0;
   transition: 0.4s;
