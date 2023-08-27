@@ -1,3 +1,11 @@
+.action__display-wrapper-voting {
+  width: 680px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
 .search__input {
   width: 470px;
   height: 60px;
@@ -50,9 +58,6 @@
   background-position: center;
 }
 
-.search__btn:hover svg {
-  fill: #fff;
-}
 
 .topmenu_btn {
   width: 60px;

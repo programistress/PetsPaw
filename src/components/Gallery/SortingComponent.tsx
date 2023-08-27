@@ -12,7 +12,6 @@ const SortingComponent = () => {
       <DropdownElement label='BREED' placeholder='None' key={3}/>
       <DropdownElement label='LIMIT' placeholder='5 items per page' key={4}/>
       <button className='update__btn'>
-        <img src="/refresh.svg" alt="" />
       </button>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import React from 'react'
 
 type Props = {
-  time: string;
+  hours: number;
+  minutes: number;
   imgID: string;
   iconSrc: string;
   actionName: string;
@@ -10,7 +11,7 @@ type Props = {
 const LogElement = (props: Props) => {
   return (
     <div className='log__wrapper'>
-      <span className='time'>{props.time}</span>
+      <span className='time'>{props.hours}:{props.minutes}</span>
       <h4>Image ID: <span className='id'>{props.imgID}</span> was added to {props.actionName}</h4>
       <img src={props.iconSrc} alt={props.iconSrc} />
     </div>

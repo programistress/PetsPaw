@@ -3,6 +3,7 @@ import Actions from './Actions'
 import logo from '../assets/header-assets/Logo.svg'
 import hi from '../assets/header-assets/Hi.svg'
 import { Link } from 'react-router-dom'
+import MyMessage from './MyMessage'
 
 const StickyHeader = () => {
   return (
@@ -15,6 +16,7 @@ const StickyHeader = () => {
     <p className='header__desc'>Welcome to MacPaw Bootcamp 2023</p> 
     <h2 className='header__title'>Lets start using The Cat API</h2>
     <Actions />
+    <MyMessage />
     </div>
   )
 }

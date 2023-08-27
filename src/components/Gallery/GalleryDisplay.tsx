@@ -33,7 +33,7 @@ const GalleryDisplay = () => {
       <div className='top__section_gallery'>
         <ActionHeader title='gallery' />
         <button className='upload__btn'>
-          <img src="/upload.svg" alt="" />
+          <img src="/upload-16.svg" alt="" />
           upload
         </button>
       </div>

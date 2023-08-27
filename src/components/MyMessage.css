@@ -1,0 +1,31 @@
+.message__wrapper {
+  margin-top: 20px;
+  width: 445px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.message__title {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.message_desc {
+  font-size: 14px;
+}
+
+.message__wrapper span {
+  color: var(--coral);
+}
+
+.message__img {
+  position: absolute;
+  right: 30px;
+  bottom: 35px;
+  width: 50px;
+  opacity: 0.9;
+}
