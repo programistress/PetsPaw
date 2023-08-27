@@ -9,8 +9,8 @@ const VotingElement = () => {
     <div className='wrapper'>
      <StickyHeader />
      <div className='flexcolumn'>
-     <TopMenu />
-     <VotingDisplay />
+      <TopMenu />
+      <VotingDisplay />
      </div>
     </div>
   )

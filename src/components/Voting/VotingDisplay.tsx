@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import ActionHeader from '../ActionHeader'
 import LogElement from './LogElement'
 
+export const likedArray:Array<any> = []
+export const dislikedArray:Array<any> = []
+export const favoritedArray:Array<any> = []
+
+
 const VotingDisplay = () => {
-
   const [breeds, setBreeds] = useState<any>([])
-
+  const [favorite, setFavorite] = useState(false)
     useEffect(() => {
         fetch('https://api.thecatapi.com/v1/breeds?limit=25', {
           headers: {
@@ -21,13 +25,25 @@ const VotingDisplay = () => {
     const imgs = breeds.map((item) => (item.image.url))
     const [activeIndex, setActiveIndex] = useState(0);
     const nextImgIndex = activeIndex === breeds.length - 1 ? 0 : activeIndex + 1
-    const likedArray:Array<any> = []
-    const likeButton = () => {
 
+
+    const likeButton = () => {
       setActiveIndex(nextImgIndex)
       likedArray.push(imgs[activeIndex])
-      console.log(likedArray)
+      setFavorite(false)
     }
+
+    const dislikeButton = () => {
+      setActiveIndex(nextImgIndex)
+      dislikedArray.push(imgs[activeIndex])
+      setFavorite(false)
+    }
+    
+    const favoriteButton = () => {
+      favoritedArray.push(imgs[activeIndex])
+      setFavorite(true)
+    }
+
   return (
     <div className='action__display-wrapper'>
       <ActionHeader title='voting' />
@@ -38,10 +54,11 @@ const VotingDisplay = () => {
           <button className='votes__btn-like'
           onClick={likeButton}> 
           </button>
-          <button className='votes__btn-fav'>
+          <button className={favorite ? 'votes__btn-fav-active'  : 'votes__btn-fav'}
+          onClick={favoriteButton}>
           </button>
           <button className='votes__btn-dislike'
-          onClick={likeButton}>
+          onClick={dislikeButton}>
           </button>
         </div>
       </div>

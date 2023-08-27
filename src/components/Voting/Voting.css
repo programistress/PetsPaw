@@ -150,10 +150,17 @@
   transition: 0.3s ease-in-out;
 }
 
-.votes__btn-fav:active {
+.votes__btn-fav-active {
   background-image: url(/public/fav-full-white.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-color: var(--coral);
+  width: 83px;
+  height: 80px;
+  border-width: 3px 2px 3px 2px;
+  border-color: #fff;
+  border-style: solid;
+  pointer-events: none;
 }
 
 .votes__btn-fav:hover {

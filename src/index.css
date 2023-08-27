@@ -52,12 +52,22 @@ button, input {
   max-width: 1440px;
 }
 
+
 .wrapper {
-  margin: 30px 30px 30px 147px;
+  margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: space-between;
+  max-width: 1440px;
+  padding: 30px 30px 30px 147px;
 }
+
+@media screen and (min-width: 2000px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+  }
+}
+
 
 
 .action__display-wrapper {
