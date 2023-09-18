@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ActionHeader from '../ActionHeader'
 import LogElement from './LogElement'
 import LogComponent from './LogComponent'
+import { useSelector } from 'react-redux'
+import { getAllCats } from '../../features/cats/catSlice'
 
 export const likedArray:Array<any> = []
 export const dislikedArray:Array<any> = []
@@ -12,22 +14,13 @@ const VotingDisplay = () => {
   const [favorite, setFavorite] = useState(false)
   const [logs, setLogs] = useState<any>([])
 
-    useEffect(() => {
-        fetch('https://api.thecatapi.com/v1/breeds?limit=25', {
-          headers: {
-            'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE'
-          }
-        }).then(response => response.json().then(data =>({
-                data: setBreeds(data),
-                status: response.status
-              })))
-    }, [])
-    //im sorry that this is in every component i have error when i try to make it reusable, working on that
+    const cats = useSelector(getAllCats)
+    console.log('cats:', cats)
    
-    const imgs = breeds.map((item) => (item.image.url))
-    const ids = breeds.map((item) => (item.id))
+    const imgs = cats.map((item) => (item.image.url))
+    const ids = cats.map((item) => (item.id))
     const [activeIndex, setActiveIndex] = useState(0);
-    const nextImgIndex = activeIndex === breeds.length - 1 ? 0 : activeIndex + 1
+    const nextImgIndex = activeIndex === cats.length - 1 ? 0 : activeIndex + 1
 
     let date = new Date(); 
     const hh = date.getHours();

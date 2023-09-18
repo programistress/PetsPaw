@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import ActionHeader from '../ActionHeader'
 import CustomGrid from '../CustomGrid'
 import './Display.css'
-import { useFetch } from '../../acync/api'
+
 
 const BreedsDisplay = () => {
 
     const [breeds, setBreeds] = useState<any>([])
 
     useEffect(() => {
-        fetch('https://api.thecatapi.com/v1/breeds?limit=20', {
+        fetch('https://api.thecatapi.com/v1/breeds?limit=30', {
           headers: {
             'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE'
           }

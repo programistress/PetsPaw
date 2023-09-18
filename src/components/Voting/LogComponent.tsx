@@ -11,10 +11,6 @@ const LogComponent = (props: Props) => {
     {props.logs.map((log) => 
     <LogElement hours={log.hours} minutes={log.minutes} imgID={log.imgID} actionName={log.actionName} iconSrc={log.iconSrc} />
     )}
-      {/* <LogElement time='22:35' imgID='fQSunHvl8' actionName='Favorites' iconSrc='/heartred.svg' />
-      <LogElement time='22:35' imgID='fQSunHvl8' actionName='Favorites' iconSrc='/heartred.svg' />
-      <LogElement time='22:35' imgID='fQSunHvl8' actionName='Favorites' iconSrc='/heartred.svg' />
-      <LogElement time='22:35' imgID='fQSunHvl8' actionName='Favorites' iconSrc='/heartred.svg' /> */}
     </div>
   )
 }

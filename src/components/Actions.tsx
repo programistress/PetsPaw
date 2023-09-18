@@ -35,14 +35,6 @@ const data = [
 const Actions = () => {
   const [activeAction, setActiveAction] = useState<string | null>(null);
 
-  useEffect(() => {
-    const data = window.localStorage.getItem('MY_APP_STATE');
-    if ( data !== null ) setActiveAction(JSON.parse(data));
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('MY_APP_STATE', JSON.stringify(activeAction));
-  }, [activeAction]);
 
   return (
     <div className='action__wrapper'>
