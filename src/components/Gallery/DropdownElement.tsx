@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 type Props = {
   label: string,
   placeholder: string,
-  choices?: Array<string>
+  params?: Array<string>,
+  className: string,
+  hidden: string
 }
 
 const DropdownElement = (props: Props) => {
+  const {
+    label,
+    placeholder,
+    params,
+  } = props;
+  const [dropdownVisible, setDropdownVisible] = useState<Boolean>(false)
+  const handle = () => {
+    setDropdownVisible(!dropdownVisible)
+  }
+
+  const pickOption = () => {
+
+  }
   return (
     <div className='sorting__dropdown'>
-      <h4 className='dropdown__label'>{props.label}</h4>
-      <button className='sorting__btn'>
-        <p>{props.placeholder}</p>
+      <h4 className='dropdown__label'>{label}</h4>
+      <button className='sorting__btn' onClick={handle}>
+        <p onClick={pickOption}>{placeholder}</p>
         <img src="/dropdownarrow.svg" alt="" />
       </button>
     </div>

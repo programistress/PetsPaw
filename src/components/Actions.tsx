@@ -33,9 +33,6 @@ const data = [
 ]
 
 const Actions = () => {
-  const [activeAction, setActiveAction] = useState<string | null>(null);
-
-
   return (
     <div className='action__wrapper'>
       {data.map(({ alt, name, src, backgroundClassName, imageClassName, backgroundClassNameActive, link }) => (
@@ -44,10 +41,7 @@ const Actions = () => {
           alt={alt}
           name={name}
           backgroundClassName={backgroundClassName}
-          backgroundClassNameActive={backgroundClassNameActive}
           imageClassName={imageClassName}
-          isActive={name === activeAction}
-          onClick={() => setActiveAction(name)}
           link={link}
         />
         ))}

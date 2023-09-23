@@ -15,7 +15,6 @@ const VotingDisplay = () => {
   const [logs, setLogs] = useState<any>([])
 
     const cats = useSelector(getAllCats)
-    console.log('cats:', cats)
    
     const imgs = cats.map((item) => (item.image.url))
     const ids = cats.map((item) => (item.id))

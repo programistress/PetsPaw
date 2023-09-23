@@ -1,38 +1,95 @@
 .top__section {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 
-.dropdown__btn {
-  border-radius: 10px;
-  background: #F8F8F7;
-  color: #8C8C8C;
+.dropdown__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.dropdown__btn {
+  z-index: 10;
+  border-radius: 10px;
+  background: #F8F8F7;
+  color: #8C8C8C;
   padding: 8px 10px;
   font-size: 16px;
   line-height: 24px;
   border: 2px solid transparent;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown__btn h3 {
+  color: #8C8C8C;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+.dropdown__params {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+
+.dropdown__btn p:hover {
+  color: black;
+  transition: 0.5s;
 }
 
 .dropdown__btn:hover {
   border: 2px solid var(--light-coral);
 }
 
+.hidden p {
+  display: none;
+}
+
+.hidden {
+  height: 40px;
+}
+
+.overflow {
+  overflow-y: auto;
+}
 
 .breeds {
   width: 226px;
-  height: 40px;
+  position: absolute;
+  left: 205px;
+  max-height: 200px;
 }
 
 .limit {
+  left: 440px;
+  position: absolute;
   width: 101px;
-  height: 40px;
 }
 
-.alphabet__btn {
+.alphabet__btn1 {
+  right: 50px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #F8F8F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.alphabet__btn2 {
+  right: 0;
+  position: absolute;
   width: 40px;
   height: 40px;
   padding: 10px;

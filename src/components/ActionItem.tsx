@@ -6,9 +6,7 @@ type ActionProps = {
   readonly alt: string;
   readonly backgroundClassName: string;
   readonly imageClassName: string;
-  readonly backgroundClassNameActive: string;
-  readonly isActive: boolean;
-  readonly onClick: () => void;
+
   readonly name: string;
   readonly link: string;
 };
@@ -18,23 +16,20 @@ export function ActionItem(props: ActionProps){
     name,
     src,
     alt,
-    isActive,
     imageClassName,
     backgroundClassName,
-    backgroundClassNameActive,
-    onClick,
     link
   } = props;
   return (
-    <div className="action" {...{ onClick }}>
+    <div className="action">
       <Link to={link}>
-      <div className={isActive ? backgroundClassNameActive : backgroundClassName}>
+      <div className={backgroundClassName}>
         <img {...{ src, alt }}  
-        className={ isActive ? 'active__img' : imageClassName} />
+        className={imageClassName} />
       </div>
       </Link>
       <Link to={link}>
-      <button className={isActive ? 'active__btn' : 'action__btn'}>
+      <button className={'action__btn'}>
         {name}
       </button>
       </Link>

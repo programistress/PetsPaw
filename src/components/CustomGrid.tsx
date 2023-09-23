@@ -11,6 +11,12 @@ interface BreedProps {
 
 const CustomGrid = (props: BreedProps) => {
 
+
+  // i need to have separate variable for every row and display it by limit state
+  props.images.map((img) =>  {
+
+  })
+
   return (
     <div className='grid'>
       <div className='row'>
