@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import ActionHeader from '../ActionHeader'
-import CustomGrid from '../CustomGrid'
+import ActionHeader from '../Actions/ActionHeader'
+import CustomGrid from '../CustomGrid/CustomGrid'
 import './GalleryDisplay.css'
 import SortingComponent from './SortingComponent'
 import { useSelector } from 'react-redux'
-import { getAllCats } from '../../features/cats/catSlice'
+import { getGalleryCats } from '../../features/cats/catSlice'
 
 
 const GalleryDisplay = () => {
+  const catsprev = useSelector(getGalleryCats)
+  //because the api is broken and some element dont have an image
+  const catsGallery:any = []
+  catsprev.map((element) => {
+    if(element.hasOwnProperty('image')){
+      catsGallery.push(element)
+    }
+  })
 
-  const cats = useSelector(getAllCats)
-
-  const imgs = cats.map((item) => (item.image.url))
-  const breednames = cats.map((item) => (item.breed))
-
+  const imgs = catsGallery.map((item) => (item.image.url))
 
   return (
     <div className='action__display-wrapper'>
       <div className='top__section_gallery'>
         <ActionHeader title='gallery' />
         <button className='upload__btn'>
-          <img src="/upload-16.svg" alt="" />
           upload
         </button>
       </div>
       <SortingComponent />
-      <CustomGrid images={imgs} breeds={breednames} />
+      <CustomGrid images={imgs}/>
     </div>
   )
 }

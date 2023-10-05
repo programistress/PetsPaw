@@ -41,7 +41,6 @@ button, input {
   outline: none;
 }
 
-
 *,
 *::before,
 *::after {
@@ -52,7 +51,6 @@ button, input {
   margin: 30px auto;
   max-width: 1440px;
 }
-
 
 .wrapper {
   margin: 0 auto;
@@ -68,8 +66,6 @@ button, input {
     padding: 30px 30px 30px 30px;
   }
 }
-
-
 
 .action__display-wrapper {
   width: 680px;

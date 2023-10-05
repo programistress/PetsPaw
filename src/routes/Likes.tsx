@@ -1,9 +1,9 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
-import ActionHeader from '../components/ActionHeader'
-import CustomGrid from '../components/CustomGrid'
+import ActionHeader from '../components/Actions/ActionHeader'
 import { likedArray } from '../components/Voting/VotingDisplay'
+import CustomGridVoting from '../components/CustomGrid/CustomGridVoting'
 
 const Likes = () => {
   return (
@@ -13,7 +13,7 @@ const Likes = () => {
     <TopMenu />
     <div className='action__display-wrapper'>
     <ActionHeader title='likes' />
-    <CustomGrid images={likedArray} />
+    <CustomGridVoting images={likedArray} />
     </div>
     </div>
     </div>

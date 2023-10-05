@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addCats, changeArrayType, getAllCats, getArrayType, getBreedId, getLimit, setBreedId, setImgArray, setLimit } from '../../features/cats/catSlice';
 
@@ -22,25 +22,10 @@ const Dropdown = () => {
   const pickedLimit = useSelector((getLimit))
 
   //for limit's options
-  const limits = [
-    {
-      number: '5', 
-    },
-    {
-      number: '10', 
-    },
-    {
-      number: '15', 
-    },
-    {
-      number: '20', 
-    }
-  ]
+  const limits = [ '5', '10', '15','20' ]
 
   const dispatch = useDispatch()
-  const arrayType = useSelector(getArrayType)
-  const breedId = useSelector(getBreedId)
-  
+
   //because the api is broken and some element dont have an image i remove them
   const catsprev = useSelector(getAllCats)
   const cats:any = []
@@ -57,7 +42,7 @@ const Dropdown = () => {
     dispatch(setBreedId(id))
     setPickedValueBreed(name)
     dispatch(changeArrayType('img'))
-   fetch(`${startUrl}/images/search?limit=${pickedLimit}&breed_ids=${id}`, {
+   fetch(`${startUrl}/images/search?limit=67&breed_ids=${id}`, {
       headers: {
         'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE',
       },
@@ -70,7 +55,7 @@ const Dropdown = () => {
   const pickAllBreads = async (name:string) => {
     setPickedValueBreed(name)
     dispatch(changeArrayType('full'))
-   fetch(`${startUrl}/breeds/?limit=${pickedLimit}`, {
+   fetch(`${startUrl}/breeds/?limit=67`, {
       headers: {
         'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE',
       },
@@ -84,28 +69,6 @@ const Dropdown = () => {
   //function to fetch with dynamic limit parametr
     const limitFunction = async (number:string) => {
     dispatch(setLimit(number))
-
-    if (arrayType === 'full'){
-      fetch(`${startUrl}/breeds/?limit=${pickedLimit}`, {
-        headers: {
-          'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE',
-        },
-      }).then(response => response.json().then(data =>({
-              data: dispatch(addCats(data)),
-              status: response.status
-            })))
-
-    } else if (arrayType === 'img') {
-      fetch(`${startUrl}/images/search?breed_ids=${breedId}&limit=${pickedLimit}`, {
-        headers: {
-          'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE',
-        },
-      }).then(response => response.json().then(data =>({
-              data: dispatch(setImgArray(data)),
-              status: response.status
-            })))
-    }
-
   }
 
   return (
@@ -128,9 +91,9 @@ const Dropdown = () => {
       <div className='dropdown__params'>
       {limits.map((param) => (
         <p
-        onClick={() => limitFunction(param.number)}
+        onClick={() => limitFunction(param)}
         >
-        Limit: {param.number}
+        Limit: {param}
         </p>
       ))}
       </div>

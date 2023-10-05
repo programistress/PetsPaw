@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import ActionHeader from '../ActionHeader'
-import LogElement from './LogElement'
+import ActionHeader from '../Actions/ActionHeader'
 import LogComponent from './LogComponent'
 import { useSelector } from 'react-redux'
-import { getAllCats } from '../../features/cats/catSlice'
+import { getVotingCats } from '../../features/cats/catSlice'
 
 export const likedArray:Array<any> = []
 export const dislikedArray:Array<any> = []
 export const favoritedArray:Array<any> = []
 
 const VotingDisplay = () => {
-  const [breeds, setBreeds] = useState<any>([])
   const [favorite, setFavorite] = useState(false)
   const [logs, setLogs] = useState<any>([])
 
-    const cats = useSelector(getAllCats)
+    const catsprev = useSelector(getVotingCats)
+    //because the api is broken and some element dont have an image
+    const cats:any = []
+    catsprev.map((element) => {
+      if(element.hasOwnProperty('image')){
+        cats.push(element)
+      }
+    })
    
     const imgs = cats.map((item) => (item.image.url))
     const ids = cats.map((item) => (item.id))

@@ -1,9 +1,9 @@
 import React from 'react'
 import TopMenu from '../components/TopMenu'
 import StickyHeader from '../components/StickyHeader'
-import ActionHeader from '../components/ActionHeader'
-import CustomGrid from '../components/CustomGrid'
+import ActionHeader from '../components/Actions/ActionHeader'
 import { dislikedArray } from '../components/Voting/VotingDisplay'
+import CustomGridVoting from '../components/CustomGrid/CustomGridVoting'
 
 const Dislikes = () => {
   return (
@@ -13,7 +13,7 @@ const Dislikes = () => {
       <TopMenu />
       <div className='action__display-wrapper'>
         <ActionHeader title='dislikes' />
-        <CustomGrid images={dislikedArray} />
+        <CustomGridVoting images={dislikedArray} />
       </div>
       </div>
     </div>

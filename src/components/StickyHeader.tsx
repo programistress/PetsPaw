@@ -1,5 +1,5 @@
 import React from 'react'
-import Actions from './Actions'
+import Actions from './Actions/Actions'
 import { Link } from 'react-router-dom'
 
 const StickyHeader = () => {

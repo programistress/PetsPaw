@@ -1,9 +1,9 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
-import ActionHeader from '../components/ActionHeader'
-import CustomGrid from '../components/CustomGrid'
 import { favoritedArray } from '../components/Voting/VotingDisplay'
+import ActionHeader from '../components/Actions/ActionHeader'
+import CustomGridVoting from '../components/CustomGrid/CustomGridVoting'
 
 const Favorites = () => {
   return (
@@ -13,7 +13,7 @@ const Favorites = () => {
       <TopMenu />
       <div className='action__display-wrapper'>
         <ActionHeader title='favorites' />
-        <CustomGrid images={favoritedArray} />
+        <CustomGridVoting images={favoritedArray} />
     </div>
       </div>
     </div>
