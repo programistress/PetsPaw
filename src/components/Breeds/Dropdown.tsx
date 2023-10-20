@@ -37,11 +37,11 @@ const Dropdown = () => {
 
   const startUrl = 'https://api.thecatapi.com/v1'
 
-  //displaying only picked breed with picked limit
+  //displaying only picked breed 
   const pickOption = async (id:string, name:string) => {
     dispatch(setBreedId(id))
     setPickedValueBreed(name)
-    dispatch(changeArrayType('img'))
+    dispatch(changeArrayType(name))
    fetch(`${startUrl}/images/search?limit=67&breed_ids=${id}`, {
       headers: {
         'x-api-key': 'live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE',
@@ -51,7 +51,8 @@ const Dropdown = () => {
             status: response.status
           })))
   }
- //displaying all breads again with picked limit
+
+ //displaying all breads again
   const pickAllBreads = async (name:string) => {
     setPickedValueBreed(name)
     dispatch(changeArrayType('full'))

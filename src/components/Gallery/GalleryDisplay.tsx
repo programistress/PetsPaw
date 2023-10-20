@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import ActionHeader from '../Actions/ActionHeader'
-import CustomGrid from '../CustomGrid/CustomGrid'
 import './GalleryDisplay.css'
 import SortingComponent from './SortingComponent'
 import { useSelector } from 'react-redux'
-import { getGalleryCats } from '../../features/cats/catSlice'
+import { getArrayTypeGallery, getGalleryCats, getImgArrayGallery } from '../../features/cats/catSlice'
+import CustomGridGallery from '../CustomGrid/CustomGridGallery'
 
 
 const GalleryDisplay = () => {
   const catsprev = useSelector(getGalleryCats)
+  const imgArray = useSelector(getImgArrayGallery)
+  const arrayType = useSelector(getArrayTypeGallery)
+  
   //because the api is broken and some element dont have an image
   const catsGallery:any = []
   catsprev.map((element) => {
@@ -17,7 +20,10 @@ const GalleryDisplay = () => {
     }
   })
 
-  const imgs = catsGallery.map((item) => (item.image.url))
+  
+  const imgsfull = catsGallery.map((item) => (item.image.url))
+  const imgs = imgArray.map((item) => (item.url))
+
 
   return (
     <div className='action__display-wrapper'>
@@ -28,7 +34,7 @@ const GalleryDisplay = () => {
         </button>
       </div>
       <SortingComponent />
-      <CustomGrid images={imgs}/>
+      <CustomGridGallery images={arrayType === 'full' ? imgsfull : imgs}/>
     </div>
   )
 }

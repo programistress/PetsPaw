@@ -4,7 +4,6 @@ import { setLimitGallery } from '../../features/cats/catSlice';
 
 type Props = {
   label: string,
-  placeholder: string,
   className: string,
   hidden: string,
   params: Array<String>,
@@ -13,7 +12,6 @@ type Props = {
 const DropdownElementLimit = (props: Props) => {
   const {
     label,
-    placeholder,
     params,
     className,
     hidden

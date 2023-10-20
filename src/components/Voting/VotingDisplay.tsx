@@ -57,22 +57,32 @@ const VotingDisplay = () => {
   
 
     const likeButton = () => {
-      setActiveIndex(nextImgIndex)
-      likedArray.push(imgs[activeIndex])
       setFavorite(false)
+      setActiveIndex(nextImgIndex)
+      if (likedArray.includes(imgs[activeIndex])) {
+        return
+      }
+      likedArray.push(imgs[activeIndex])
       setLogs([...logs, newLogLike])
     }
 
     const dislikeButton = () => {
-      setActiveIndex(nextImgIndex)
-      dislikedArray.push(imgs[activeIndex])
       setFavorite(false)
+      setActiveIndex(nextImgIndex)
+      if (dislikedArray.includes(imgs[activeIndex])) {
+        return
+      }
+      dislikedArray.push(imgs[activeIndex])
+
       setLogs([...logs, newLogDislike])
     }
     
     const favoriteButton = () => {
-      favoritedArray.push(imgs[activeIndex])
       setFavorite(true)
+      if (favoritedArray.includes(imgs[activeIndex])) {
+        return
+      }
+      favoritedArray.push(imgs[activeIndex])
       setLogs([...logs, newLogFavorite])
     }
 

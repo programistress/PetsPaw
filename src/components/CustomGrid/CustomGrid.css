@@ -1,7 +1,17 @@
 .row {
+  top: 0;
   display: flex;
   gap: 20px;
   position: relative;
+  height: 300px;
+}
+
+.row2 {
+  top: 0;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  height: 140px;
 }
 
 .row4 {
@@ -20,6 +30,7 @@
 .rounded {
   border-radius: 20px;
   object-fit: cover;
+  max-width: 420px;
 }
 
 .row__hidden {
@@ -35,7 +46,6 @@
   width: 200px;
   height: 300px;
 }
-
 
 .big {
   width: 420px;
@@ -55,6 +65,7 @@
 .col1row4 {
   position: absolute;
   top: -160px;
+  left: 0;
 }
 
 .col2row4 {
@@ -71,12 +82,122 @@
   display: block;
 }
 
+.image__card {
+  display: flex;
+  justify-content: center;
+}
+
+.overlay-breed {
+  padding: 0 5px;
+  background-color: var(--coral);
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.overlay-breed:hover {
+  opacity: 0.6;
+  transition: 0.3s ease-in-out;
+}
+
+.overlay-breed__big {
+  padding: 0 5px;
+  background-color: var(--coral);
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  top: -160px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out; 
+}
+
+.overlay-breed__big:hover {
+  opacity: 0.6;
+  transition: 0.3s ease-in-out;
+}
+
+.image__breed {
+  object-fit: cover;
+}
+
+.container__breed {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__info {
+  display: flex;
+  justify-content: center;
+}
+
 .img__title {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
   color: var(--coral);
   border-radius: 10px;
   background: #FFF;
-  width: 100%;
-  padding: 5px 0;
-  bottom: 10px;
+  padding: 5px 0px;
+  width: 92%;
+  height: 34px;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-in-out; 
 }
 
+.img__title-big {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 20;
+  color: var(--coral);
+  border-radius: 10px;
+  background: #FFF;
+  padding: 5px 0px;
+  height: 34px;
+  bottom: -95px;
+  width: 386px;
+  display: flex;
+  justify-content: center;
+  left: 16px;
+}
+
+.img__title-small {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 20;
+  color: var(--coral);
+  border-radius: 10px;
+  background: #FFF;
+  padding: 5px 0px;
+  height: 34px;
+  bottom: -95px;
+  width: 184px;
+  display: flex;
+  justify-content: center;
+  left: 42px;
+}
+
+.img__card:hover .img__title {
+  opacity: 100%;
+  transition: 0.3s ease-in-out; 
+ }
+
+.img__card:hover .img__title-big {
+ opacity: 100%;
+ transition: 0.3s ease-in-out; 
+}
+
+.img__card:hover .img__title-small {
+  opacity: 100%;
+  transition: 0.3s ease-in-out; 
+ }

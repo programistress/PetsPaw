@@ -59,6 +59,14 @@ const BreedsDisplay = () => {
     }     
   }
 
+  const breednamesingle:any = []
+  if (arrayType != 'full') {
+    for (let i = 0; i < 20; i++) {
+      breednamesingle.push(arrayType)
+  }
+  }
+  
+
   return (
     <div className='action__display-wrapper'>
       <div className='top__section'>
@@ -72,7 +80,7 @@ const BreedsDisplay = () => {
         <img src="/b-a.svg" alt="" />
       </button>
       </div>
-      <CustomGrid images={arrayType === 'full' ? imgsfull : imgs} breeds={breednames} />
+      <CustomGrid images={arrayType === 'full' ? imgsfull : imgs} breeds={arrayType === 'full' ? breednames : breednamesingle} />
     </div>
   )
 }

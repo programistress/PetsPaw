@@ -3,20 +3,40 @@ import React from 'react'
 interface ImgProps {
   image: string;
   breed?: string;
-  className: string;
+  imgClassName: string;
+  overlay: string;
+  titleClassname?: string;
 }
 
 const Image = (props: ImgProps) => {
+  if (props.image) {
+    if (props.breed) {
   return (
-    <div>
-      <img className={props.image ? props.className : 'no_img'} src={props.image} />
-      <a className='img__link' href="">
-      <div className="img__hidden">
-        <h4 className='img__title'>{props.breed}</h4>
+    <div className='img__card'>
+        <img className={props.imgClassName} src={props.image} />
+      {/* <a className='img__link' href=""> */}
+      <div className='card__info'>
+        <div className={props.overlay}></div>
+        <h4 className={props.titleClassname ? props.titleClassname : 'img__title'}>{props.breed}</h4>
       </div>
-      </a>
+      {/* </a> */}
     </div>
   )
+    } else {
+      return (
+        <div className='img__card'>
+            <img className={props.imgClassName} src={props.image} />
+          {/* <a className='img__link' href=""> */}
+          <div className='card__info'>
+            <div className={props.overlay}></div>
+          </div>
+          {/* </a> */}
+        </div>
+      )
+    }
+
+  }
 }
+
 
 export default Image

@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setBreedGallery } from '../../features/cats/catSlice';
+import { getAllCats, setBreedGallery } from '../../features/cats/catSlice';
 
 type Props = {
   label: string,
-  placeholder: string,
   className: string,
   hidden: string,
-  params: Array<String>,
 }
 
 const DropdownElementBreed = (props: Props) => {
   const {
     label,
-    placeholder,
-    params,
     className,
     hidden
   } = props;
@@ -25,14 +21,23 @@ const DropdownElementBreed = (props: Props) => {
   const [pickedValue, setPickedValue] = useState('All breads')
   const dispatch = useDispatch()
 
-  const pickOption = (param) => {
-    setPickedValue(param)
-    dispatch(setBreedGallery(param))
+  const pickOption = (id, name) => {
+    setPickedValue(name)
+    dispatch(setBreedGallery(id))
   }
 
   const pickAllBreads = () => {
+    setPickedValue('All breads')
     dispatch(setBreedGallery('all'))
   }
+
+  const catsprev = useSelector(getAllCats)
+  const cats:any = []
+  catsprev.map((element) => {
+    if(element.hasOwnProperty('image')){
+      cats.push(element)
+    }
+  })
 
  
   return (
@@ -41,15 +46,15 @@ const DropdownElementBreed = (props: Props) => {
       <button className='sorting__btn' onClick={handle}>
         <div className="dropdown__params">
         <div className="dropdown__title_">
-          <h3 onClick={() => pickOption(params[0])}>{pickedValue}</h3>
+          <h3>{pickedValue}</h3>
           <img src="/dropdownarrow.svg" alt="" />
         </div>
         <p onClick={() =>pickAllBreads()}>All breads</p>
-        {params.map((param) => (
+        {cats.map((param) => (
         <p
-        onClick={() => pickOption(param)}
+        onClick={() => pickOption(param.id, param.name)}
         >
-        {param}
+        {param.name}
         </p>
       ))}
       </div>

@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { setTypeGallery } from '../../features/cats/catSlice';
 
 type Props = {
   label: string,
-  placeholder: string,
   className: string,
   hidden: string,
   params: Array<String>,
@@ -13,7 +10,6 @@ type Props = {
 const DropdownElementType = (props: Props) => {
   const {
     label,
-    placeholder,
     params,
     className,
     hidden
@@ -24,11 +20,9 @@ const DropdownElementType = (props: Props) => {
   }
 
   const [pickedValue, setPickedValue] = useState(params[0])
-  const dispatch = useDispatch()
 
   const pickOption = (param) => {
     setPickedValue(param)
-    dispatch(setTypeGallery(param))
   }
 
  

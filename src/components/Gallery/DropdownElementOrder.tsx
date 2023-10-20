@@ -4,7 +4,6 @@ import { setOrderGallery } from '../../features/cats/catSlice';
 
 type Props = {
   label: string,
-  placeholder: string,
   className: string,
   hidden: string,
   params: Array<String>,
@@ -13,7 +12,6 @@ type Props = {
 const DropdownElementOrder = (props: Props) => {
   const {
     label,
-    placeholder,
     params,
     className,
     hidden

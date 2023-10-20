@@ -16,6 +16,7 @@
   background-image: url(/public/upload-16.svg);
   background-position: 80% 48%;
   background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
 }
 
 .upload__btn:hover {
@@ -24,6 +25,7 @@
   background-repeat: no-repeat;
   background-color: var(--coral);
   color: #fff;
+  transition: 0.3s ease-in-out;
 }
 
 .top__section_gallery {
@@ -80,8 +82,6 @@
   opacity: 100%;
 }
 
-
-
 .sorting__btn h3 {
   font-weight: 400;
   color: #1D1D1D;
@@ -93,7 +93,6 @@
 .sorting__btn:hover {
   border: 2px solid var(--light-coral);
 }
-
 
 .dropdown__label {
   padding-left: 10px;

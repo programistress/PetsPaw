@@ -2,68 +2,284 @@ import React from 'react'
 import './CustomGrid.css'
 import Image from '../Image';
 import { useSelector } from 'react-redux';
-import { getLimit } from '../../features/cats/catSlice';
+import { getLimit, getSavedLimit } from '../../features/cats/catSlice';
 
 
 interface BreedProps {
   images: Array<string>;
-  breeds?: Array<string>;
+  breeds: Array<string>;
 }
 
 
 const CustomGrid = (props: BreedProps) => {
-
-
   // i need to display it by limit state
   const limit = useSelector(getLimit)
+  const galleryLimit = useSelector(getSavedLimit)
+  if (props.breeds) {
   return (
     <div className='grid'>
       {/* 1 */}
       <div className='row'>
-        <Image className={props.images[0] ? 'medium rounded' : ''} image={props.images[0]} />
-        <Image className={props.images[1] ? 'standart rounded' : ''} image={props.images[1]} />
-        <Image className={props.images[2] ? 'standart rounded' : ''} image={props.images[2]} />
+        <Image 
+        imgClassName='medium rounded' 
+        image={props.images[0]} 
+        overlay='overlay-breed medium' 
+        breed={props.breeds[0]}/>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[1]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[1]}/>
+        <Image 
+        imgClassName='standart rounded'
+        image={props.images[2]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[2]}/>
       </div>
          {/* 2  5 */}
-      <div className='row'>
-        <Image className={props.images[3] ? 'standart rounded' : ''} image={props.images[3]} />
-        <Image className={props.images[4] ? 'big col2row2 rounded' : ''} image={props.images[4]} />
+      <div className='row2'>
+        <Image 
+        imgClassName='standart rounded'
+        image={props.images[3]}
+        overlay='overlay-breed standart'
+        breed={props.breeds[3]}/>
+        <Image 
+        imgClassName='big col2row2 rounded'
+        image={props.images[4]} 
+        overlay='big overlay-breed__big col2row2' 
+        breed={props.breeds[4]}
+        titleClassname='img__title-big'/>
       </div>
          {/* 3 */}
       <div className={limit === '10' || limit === '15' || limit === '20' ? 'row' : 'row__hidden' }>
-        <Image className={props.images[5] ? 'standart rounded' : ''} image={props.images[5]} />
-        <Image className={props.images[6] ? 'standart rounded' : ''} image={props.images[6]} />
-        <Image className={props.images[7] ? 'medium col3row3 rounded' : ''} image={props.images[7]} />
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[5]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[5]}/>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[6]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[6]}/>
+        <Image 
+        imgClassName='medium col3row3 rounded' 
+        image={props.images[7]}
+        overlay='overlay-breed medium' 
+        breed={props.breeds[7]}/>
       </div>
          {/* 4  10 */}
       <div className={limit === '10' || limit === '15' || limit === '20'  ? 'row4' : 'row__hidden' }>
-        <Image className={props.images[8] ? 'big col1row4 rounded' : ''} image={props.images[8]} />
-        <Image className={props.images[9] ? 'standart col2row4 rounded' : ''} image={props.images[9]} />
+        <Image 
+        imgClassName='big col1row4 rounded' 
+        image={props.images[8]} 
+        overlay='overlay-breed__big big col1row4' 
+        breed={props.breeds[8]}
+        titleClassname='img__title-big'/>
+        <Image 
+        imgClassName='standart col2row4 rounded' 
+        image={props.images[9]} 
+        overlay='overlay-breed col2row4 standart' 
+        breed={props.breeds[9]}
+        titleClassname='img__title-small'/>
       </div>
          {/* 5 */}
       <div className={limit === '15' || limit === '20'  ? 'row' : 'row__hidden' }>
-        <Image className={props.images[0] ? 'medium rounded' : ''} image={props.images[10]} />
-        <Image className={props.images[1] ? 'standart rounded' : ''} image={props.images[11]} />
-        <Image className={props.images[2] ? 'standart rounded' : ''} image={props.images[12]} />
+        <Image 
+        imgClassName='medium rounded' 
+        image={props.images[10]} 
+        overlay='overlay-breed medium' 
+        breed={props.breeds[10]}/>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[11]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[11]}/>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[12]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[12]}/>
       </div>
          {/* 6  15 */}
-      <div className={limit === '15' || limit === '20'  ? 'row' : 'row__hidden' }>
-        <Image className={props.images[3] ? 'standart rounded' : ''} image={props.images[13]} />
-        <Image className={props.images[4] ? 'big col2row2 rounded' : ''} image={props.images[14]} />
+      <div className={limit === '15' || limit === '20'  ? 'row2' : 'row__hidden' }>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[13]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[13]}/>
+        <Image 
+        imgClassName='big col2row2 rounded' 
+        image={props.images[14]} 
+        overlay='overlay-breed__big big col2row2' 
+        breed={props.breeds[14]}
+        titleClassname='img__title-big'/>
       </div>
          {/* 7 */}
       <div className={limit === '20' ? 'row' : 'row__hidden' }>
-        <Image className={props.images[5] ? 'standart rounded' : ''} image={props.images[15]} />
-        <Image className={props.images[6] ? 'standart rounded' : ''} image={props.images[16]} />
-        <Image className={props.images[7] ? 'medium col3row3 rounded' : ''} image={props.images[17]} />
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[15]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[15]}/>
+        <Image 
+        imgClassName='standart rounded' 
+        image={props.images[16]} 
+        overlay='overlay-breed standart' 
+        breed={props.breeds[16]}/>
+        <Image 
+        imgClassName='medium col3row3 rounded' 
+        image={props.images[17]} 
+        overlay='overlay-breed medium' 
+        breed={props.breeds[17]}/>
       </div>
          {/* 8 20 */}
       <div className={limit === '20'  ? 'row4' : 'row__hidden' }>
-        <Image className={props.images[8] ? 'big col1row4 rounded' : ''} image={props.images[18]} />
-        <Image className={props.images[9] ? 'standart col2row4 rounded' : ''} image={props.images[19]} />
+        <Image 
+        imgClassName='big col1row4 rounded' 
+        image={props.images[18]} 
+        overlay='overlay-breed__big big col1row4' 
+        breed={props.breeds[18]}
+        titleClassname='img__title-big'/>
+        <Image 
+        imgClassName='standart col2row4 rounded' 
+        image={props.images[19]} 
+        overlay='overlay-breed col2row4 standart' 
+        breed={props.breeds[19]}
+        titleClassname='img__title-small'/>
       </div>
     </div>
   )
+  } else {
+    return (
+      <div className='grid'>
+        {/* 1 */}
+        <div className='row'>
+          <Image 
+          imgClassName='medium rounded' 
+          image={props.images[0]} 
+          overlay='overlay-breed medium' 
+         />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[1]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='standart rounded'
+          image={props.images[2]} 
+          overlay='overlay-breed standart' 
+          />
+        </div>
+           {/* 2  5 */}
+        <div className='row2'>
+          <Image 
+          imgClassName='standart rounded'
+          image={props.images[3]}
+          overlay='overlay-breed standart'
+          />
+          <Image 
+          imgClassName='big col2row2 rounded'
+          image={props.images[4]} 
+          overlay='big overlay-breed__big col2row2' 
+          />
+        </div>
+           {/* 3 */}
+        <div className={limit === '10' || limit === '15' || limit === '20' ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[5]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[6]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='medium col3row3 rounded' 
+          image={props.images[7]}
+          overlay='overlay-breed medium' 
+          />
+        </div>
+           {/* 4  10 */}
+        <div className={limit === '10' || limit === '15' || limit === '20'  ? 'row4' : 'row__hidden' }>
+          <Image 
+          imgClassName='big col1row4 rounded' 
+          image={props.images[8]} 
+          overlay='overlay-breed__big big col1row4' 
+          />
+          <Image 
+          imgClassName='standart col2row4 rounded' 
+          image={props.images[9]} 
+          overlay='overlay-breed col2row4 standart' 
+          />
+        </div>
+           {/* 5 */}
+        <div className={limit === '15' || limit === '20'  ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='medium rounded' 
+          image={props.images[10]} 
+          overlay='overlay-breed medium' 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[11]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[12]} 
+          overlay='overlay-breed standart' 
+          />
+        </div>
+           {/* 6  15 */}
+        <div className={limit === '15' || limit === '20'  ? 'row2' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[13]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='big col2row2 rounded' 
+          image={props.images[14]} 
+          overlay='overlay-breed__big big col2row2' 
+          />
+        </div>
+           {/* 7 */}
+        <div className={limit === '20' ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[15]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[16]} 
+          overlay='overlay-breed standart' 
+          />
+          <Image 
+          imgClassName='medium col3row3 rounded' 
+          image={props.images[17]} 
+          overlay='overlay-breed medium' 
+          />
+        </div>
+           {/* 8 20 */}
+        <div className={limit === '20'  ? 'row4' : 'row__hidden' }>
+          <Image 
+          imgClassName='big col1row4 rounded' 
+          image={props.images[18]} 
+          overlay='overlay-breed__big big col1row4' 
+          />
+          <Image 
+          imgClassName='standart col2row4 rounded' 
+          image={props.images[19]} 
+          overlay='overlay-breed col2row4 standart' 
+          />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default CustomGrid
