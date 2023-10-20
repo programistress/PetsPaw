@@ -4,7 +4,7 @@ import './GalleryDisplay.css'
 import SortingComponent from './SortingComponent'
 import { useSelector } from 'react-redux'
 import { getArrayTypeGallery, getGalleryCats, getImgArrayGallery } from '../../features/cats/catSlice'
-import CustomGridGallery from '../CustomGrid/CustomGridGallery'
+import CustomGrid from '../CustomGrid/CustomGrid'
 
 
 const GalleryDisplay = () => {
@@ -34,7 +34,7 @@ const GalleryDisplay = () => {
         </button>
       </div>
       <SortingComponent />
-      <CustomGridGallery images={arrayType === 'full' ? imgsfull : imgs}/>
+      <CustomGrid images={arrayType === 'full' ? imgsfull : imgs}/>
     </div>
   )
 }

@@ -7,7 +7,8 @@ import { getLimit, getSavedLimit } from '../../features/cats/catSlice';
 
 interface BreedProps {
   images: Array<string>;
-  breeds: Array<string>;
+  breeds?: Array<string>;
+  voting?: boolean
 }
 
 
@@ -150,7 +151,117 @@ const CustomGrid = (props: BreedProps) => {
       </div>
     </div>
   )
-  } else {
+  } else if(props.voting === true) {
+    return(
+      <div className='grid'>
+        {/* 1 */}
+        <div className='row'>
+          <Image 
+          imgClassName='medium rounded' 
+          image={props.images[0]} 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[1]} 
+          />
+          <Image 
+          imgClassName='standart rounded'
+          image={props.images[2]}  
+          />
+        </div>
+           {/* 2  5 */}
+        <div className='row2'>
+          <Image 
+          imgClassName='standart rounded'
+          image={props.images[3]}
+          />
+          <Image 
+          imgClassName='big col2row2 rounded'
+          image={props.images[4]} 
+          />
+        </div>
+           {/* 3 */}
+        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20' ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[5]} 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[6]} 
+          />
+          <Image 
+          imgClassName='medium col3row3 rounded' 
+          image={props.images[7]}
+          />
+        </div>
+           {/* 4  10 */}
+        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
+          <Image 
+          imgClassName='big col1row4 rounded' 
+          image={props.images[8]}  
+          />
+          <Image 
+          imgClassName='standart col2row4 rounded' 
+          image={props.images[9]}  
+          />
+        </div>
+           {/* 5 */}
+        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='medium rounded' 
+          image={props.images[10]} 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[11]}  
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[12]} 
+          />
+        </div>
+           {/* 6  15 */}
+        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row2' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[13]} 
+          />
+          <Image 
+          imgClassName='big col2row2 rounded' 
+          image={props.images[14]} 
+          />
+        </div>
+           {/* 7 */}
+        <div className={galleryLimit === '20' ? 'row' : 'row__hidden' }>
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[15]} 
+          />
+          <Image 
+          imgClassName='standart rounded' 
+          image={props.images[16]} 
+          />
+          <Image 
+          imgClassName='medium col3row3 rounded' 
+          image={props.images[17]} 
+          />
+        </div>
+           {/* 8 20 */}
+        <div className={galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
+          <Image 
+          imgClassName='big col1row4 rounded' 
+          image={props.images[18]}  
+          />
+          <Image 
+          imgClassName='standart col2row4 rounded' 
+          image={props.images[19]}  
+          />
+        </div>
+      </div>
+    )
+  } 
+  else {
     return (
       <div className='grid'>
         {/* 1 */}
@@ -185,7 +296,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 3 */}
-        <div className={limit === '10' || limit === '15' || limit === '20' ? 'row' : 'row__hidden' }>
+        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20' ? 'row' : 'row__hidden' }>
           <Image 
           imgClassName='standart rounded' 
           image={props.images[5]} 
@@ -203,7 +314,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 4  10 */}
-        <div className={limit === '10' || limit === '15' || limit === '20'  ? 'row4' : 'row__hidden' }>
+        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
           <Image 
           imgClassName='big col1row4 rounded' 
           image={props.images[8]} 
@@ -216,7 +327,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 5 */}
-        <div className={limit === '15' || limit === '20'  ? 'row' : 'row__hidden' }>
+        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row' : 'row__hidden' }>
           <Image 
           imgClassName='medium rounded' 
           image={props.images[10]} 
@@ -234,7 +345,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 6  15 */}
-        <div className={limit === '15' || limit === '20'  ? 'row2' : 'row__hidden' }>
+        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row2' : 'row__hidden' }>
           <Image 
           imgClassName='standart rounded' 
           image={props.images[13]} 
@@ -247,7 +358,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 7 */}
-        <div className={limit === '20' ? 'row' : 'row__hidden' }>
+        <div className={galleryLimit === '20' ? 'row' : 'row__hidden' }>
           <Image 
           imgClassName='standart rounded' 
           image={props.images[15]} 
@@ -265,7 +376,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 8 20 */}
-        <div className={limit === '20'  ? 'row4' : 'row__hidden' }>
+        <div className={galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
           <Image 
           imgClassName='big col1row4 rounded' 
           image={props.images[18]} 

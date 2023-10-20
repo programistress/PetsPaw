@@ -3,7 +3,7 @@ import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
 import { favoritedArray } from '../components/Voting/VotingDisplay'
 import ActionHeader from '../components/Actions/ActionHeader'
-import CustomGridVoting from '../components/CustomGrid/CustomGridVoting'
+import CustomGrid from '../components/CustomGrid/CustomGrid'
 
 const Favorites = () => {
   return (
@@ -13,7 +13,7 @@ const Favorites = () => {
       <TopMenu />
       <div className='action__display-wrapper'>
         <ActionHeader title='favorites' />
-        <CustomGridVoting images={favoritedArray} />
+        <CustomGrid images={favoritedArray} voting={true} />
     </div>
       </div>
     </div>
