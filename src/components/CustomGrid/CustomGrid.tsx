@@ -2,7 +2,7 @@ import React from 'react'
 import './CustomGrid.css'
 import Image from '../Image';
 import { useSelector } from 'react-redux';
-import { getLimit, getSavedLimit } from '../../features/cats/catSlice';
+import { getLimit } from '../../features/cats/catSlice';
 
 
 interface BreedProps {
@@ -15,7 +15,6 @@ interface BreedProps {
 const CustomGrid = (props: BreedProps) => {
   // i need to display it by limit state
   const limit = useSelector(getLimit)
-  const galleryLimit = useSelector(getSavedLimit)
   if (props.breeds) {
   return (
     <div className='grid'>
@@ -151,7 +150,7 @@ const CustomGrid = (props: BreedProps) => {
       </div>
     </div>
   )
-  } else if(props.voting === true) {
+  } else {
     return(
       <div className='grid'>
         {/* 1 */}
@@ -181,7 +180,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 3 */}
-        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20' ? 'row' : 'row__hidden' }>
+        <div className='row' >
           <Image 
           imgClassName='standart rounded' 
           image={props.images[5]} 
@@ -196,7 +195,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 4  10 */}
-        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
+        <div className='row4'>
           <Image 
           imgClassName='big col1row4 rounded' 
           image={props.images[8]}  
@@ -207,7 +206,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 5 */}
-        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row' : 'row__hidden' }>
+        <div className={props.images[10] ? 'row' : 'row__hidden'}>
           <Image 
           imgClassName='medium rounded' 
           image={props.images[10]} 
@@ -222,7 +221,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 6  15 */}
-        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row2' : 'row__hidden' }>
+        <div className={props.images[13] ? 'row2' : 'row__hidden'}>
           <Image 
           imgClassName='standart rounded' 
           image={props.images[13]} 
@@ -233,7 +232,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 7 */}
-        <div className={galleryLimit === '20' ? 'row' : 'row__hidden' }>
+        <div className={props.images[15] ? 'row' : 'row__hidden'}>
           <Image 
           imgClassName='standart rounded' 
           image={props.images[15]} 
@@ -248,7 +247,7 @@ const CustomGrid = (props: BreedProps) => {
           />
         </div>
            {/* 8 20 */}
-        <div className={galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
+        <div className= {props.images[18] ? 'row4' : 'row__hidden'}>
           <Image 
           imgClassName='big col1row4 rounded' 
           image={props.images[18]}  
@@ -261,136 +260,7 @@ const CustomGrid = (props: BreedProps) => {
       </div>
     )
   } 
-  else {
-    return (
-      <div className='grid'>
-        {/* 1 */}
-        <div className='row'>
-          <Image 
-          imgClassName='medium rounded' 
-          image={props.images[0]} 
-          overlay='overlay-breed medium' 
-         />
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[1]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='standart rounded'
-          image={props.images[2]} 
-          overlay='overlay-breed standart' 
-          />
-        </div>
-           {/* 2  5 */}
-        <div className='row2'>
-          <Image 
-          imgClassName='standart rounded'
-          image={props.images[3]}
-          overlay='overlay-breed standart'
-          />
-          <Image 
-          imgClassName='big col2row2 rounded'
-          image={props.images[4]} 
-          overlay='big overlay-breed__big col2row2' 
-          />
-        </div>
-           {/* 3 */}
-        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20' ? 'row' : 'row__hidden' }>
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[5]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[6]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='medium col3row3 rounded' 
-          image={props.images[7]}
-          overlay='overlay-breed medium' 
-          />
-        </div>
-           {/* 4  10 */}
-        <div className={galleryLimit === '10' || galleryLimit === '15' || galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
-          <Image 
-          imgClassName='big col1row4 rounded' 
-          image={props.images[8]} 
-          overlay='overlay-breed__big big col1row4' 
-          />
-          <Image 
-          imgClassName='standart col2row4 rounded' 
-          image={props.images[9]} 
-          overlay='overlay-breed col2row4 standart' 
-          />
-        </div>
-           {/* 5 */}
-        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row' : 'row__hidden' }>
-          <Image 
-          imgClassName='medium rounded' 
-          image={props.images[10]} 
-          overlay='overlay-breed medium' 
-          />
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[11]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[12]} 
-          overlay='overlay-breed standart' 
-          />
-        </div>
-           {/* 6  15 */}
-        <div className={galleryLimit === '15' || galleryLimit === '20'  ? 'row2' : 'row__hidden' }>
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[13]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='big col2row2 rounded' 
-          image={props.images[14]} 
-          overlay='overlay-breed__big big col2row2' 
-          />
-        </div>
-           {/* 7 */}
-        <div className={galleryLimit === '20' ? 'row' : 'row__hidden' }>
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[15]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='standart rounded' 
-          image={props.images[16]} 
-          overlay='overlay-breed standart' 
-          />
-          <Image 
-          imgClassName='medium col3row3 rounded' 
-          image={props.images[17]} 
-          overlay='overlay-breed medium' 
-          />
-        </div>
-           {/* 8 20 */}
-        <div className={galleryLimit === '20'  ? 'row4' : 'row__hidden' }>
-          <Image 
-          imgClassName='big col1row4 rounded' 
-          image={props.images[18]} 
-          overlay='overlay-breed__big big col1row4' 
-          />
-          <Image 
-          imgClassName='standart col2row4 rounded' 
-          image={props.images[19]} 
-          overlay='overlay-breed col2row4 standart' 
-          />
-        </div>
-      </div>
-    )
-  }
+
 }
 
 export default CustomGrid

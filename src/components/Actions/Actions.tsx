@@ -23,18 +23,18 @@ const data = [
   {
     src: '/gallery-img.png',
     alt: 'galleryimg',
-    name: 'gallery',
+    name: 'search',
     backgroundClassName: 'gallery__bg',
     backgroundClassNameActive: 'gallery__bg-active',
     imageClassName: 'action__img-gallery',
-    link: '/gallery',
+    link: '/search',
   },
 ]
 
 const Actions = () => {
   return (
     <div className='action__wrapper'>
-      {data.map(({ alt, name, src, backgroundClassName, imageClassName, backgroundClassNameActive, link }) => (
+      {data.map(({ alt, name, src, backgroundClassName, imageClassName, link }) => (
         <ActionItem
           src={src}
           alt={alt}

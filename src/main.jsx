@@ -8,7 +8,7 @@ import {
 import Home from './routes/Home.jsx';
 import ErrorPage from './routes/ErrorPage';
 import VotingElement from './routes/VotingElement';
-import GalleryElement from './routes/GalleryElement';
+import SearchElement from './routes/SearchElement';
 import BreedsElement from './routes/BreedsElement';
 import Likes from './routes/Likes';
 import Dislikes from './routes/Dislikes';
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
     element: <BreedsElement />
   },
   {
-    path: '/gallery',
-    element: <GalleryElement/>
+    path: '/search',
+    element: <SearchElement/>
   },
   {
     path: '/likes',

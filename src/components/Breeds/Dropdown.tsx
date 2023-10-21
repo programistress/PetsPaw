@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addCats, changeArrayType, getAllCats, getArrayType, getBreedId, getLimit, setBreedId, setImgArray, setLimit } from '../../features/cats/catSlice';
+import { addCats, changeArrayType, getAllCats,  getLimit, setBreedId, setImgArray, setLimit } from '../../features/cats/catSlice';
 
 
 const Dropdown = () => {

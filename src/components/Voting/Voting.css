@@ -24,7 +24,7 @@
 }
 
 .search__input:focus {
-  border: 2px solid var(--coral);
+  border: 2px solid var(--light-coral);
 }
 
 .searchbar {

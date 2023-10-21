@@ -1,19 +1,19 @@
 import React from 'react'
 import StickyHeader from '../components/StickyHeader'
 import TopMenu from '../components/TopMenu'
-import GalleryDisplay from '../components/Gallery/GalleryDisplay'
+import SearchDisplay from '../components/Search/SearchDisplay'
 
-const GalleryElement = () => {
+const SearchElement = () => {
   return (
     <div className='wrapper'>
      <StickyHeader />
      <div className='flexcolumn'>
      <TopMenu />
-     <GalleryDisplay />
+     <SearchDisplay />
      </div>
     </div>
   )
 }
 
-export default GalleryElement
+export default SearchElement
 

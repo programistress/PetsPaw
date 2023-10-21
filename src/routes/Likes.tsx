@@ -8,14 +8,21 @@ import CustomGrid from '../components/CustomGrid/CustomGrid'
 const Likes = () => {
   return (
     <div className='wrapper'>
-    <StickyHeader />
-    <div className='flexcolumn'>
-    <TopMenu />
-    <div className='action__display-wrapper'>
-    <ActionHeader title='likes' />
-    <CustomGrid images={likedArray} voting={true} />
-    </div>
-    </div>
+      <StickyHeader />
+        <div className='flexcolumn'>
+          <TopMenu />
+          <div className='action__display-wrapper'>
+            <ActionHeader title='likes' />
+            {likedArray.length > 0 ? (
+               <CustomGrid images={likedArray}/>
+            ) : (
+             <div className='noitem__message'>
+              No item here yet.
+             </div>
+            )}
+           
+          </div>
+        </div>
     </div>
   )
 }

@@ -1,14 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import SearchElement from './Search/SearchElement';
 
 const TopMenu = () => {
+  
   return (
-    <div className='topmenu'>
-      <div className='searchbar'>
-      <input className='search__input' placeholder='Search for breeds by name' type="text" />
-      <button className='search__btn'>
-      </button>
-      </div>
+    <div className='topmenu'>  
+      <SearchElement />
       <Link to={`/likes`}>
         <button className='topmenu_btn'>
           <img src="/like.svg" alt="" />

@@ -13,7 +13,13 @@ const Favorites = () => {
       <TopMenu />
       <div className='action__display-wrapper'>
         <ActionHeader title='favorites' />
-        <CustomGrid images={favoritedArray} voting={true} />
+        {favoritedArray.length > 0 ? (
+               <CustomGrid images={favoritedArray}/>
+            ) : (
+             <div className='noitem__message'>
+              No item here yet.
+             </div>
+            )}
     </div>
       </div>
     </div>

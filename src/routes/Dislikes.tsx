@@ -13,7 +13,13 @@ const Dislikes = () => {
       <TopMenu />
       <div className='action__display-wrapper'>
         <ActionHeader title='dislikes' />
-        <CustomGrid images={dislikedArray} voting={true} />
+        {dislikedArray.length > 0 ? (
+               <CustomGrid images={dislikedArray}/>
+            ) : (
+             <div className='noitem__message'>
+              No item here yet.
+             </div>
+            )}
       </div>
       </div>
     </div>
