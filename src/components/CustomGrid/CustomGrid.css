@@ -28,6 +28,31 @@
   flex-direction: column;
 }
 
+.grid__mobile {
+  display: grid;
+  grid-template-columns: repeat(2, 258px);
+  gap: 10px;
+}
+
+.image__mobile {
+  width: 250px;
+  height: 170px;
+}
+
+@media screen and (max-width: 595px) {
+  .grid__mobile {
+    display: grid;
+    grid-template-columns: repeat(1, 295px);
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .image__mobile {
+    width: 295px;
+    height: 207px;
+  }
+}
+
 .rounded {
   border-radius: 20px;
   object-fit: cover;

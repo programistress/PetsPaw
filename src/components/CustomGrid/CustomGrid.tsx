@@ -1,6 +1,6 @@
 import React from 'react'
 import './CustomGrid.css'
-import Image from '../Image';
+import Image from './Image';
 import { useSelector } from 'react-redux';
 import { getLimit } from '../../features/cats/catSlice';
 
@@ -8,7 +8,6 @@ import { getLimit } from '../../features/cats/catSlice';
 interface BreedProps {
   images: Array<string>;
   breeds?: Array<string>;
-  voting?: boolean
 }
 
 

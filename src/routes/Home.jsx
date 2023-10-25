@@ -1,11 +1,11 @@
 import './Home.css'
 import StickyHeader from '../components/StickyHeader'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addCats, addVotingCats, addGalleryCats, setImgArray} from '../features/cats/catSlice'
 
 
-const Header = () => {
+const Header = ({setVisible}) => {
   const dispatch = useDispatch()
   
   useEffect(() => {
@@ -42,9 +42,11 @@ useEffect(() => {
         })))
 }, [])
 
+
   return (
     <header className='wrapper'>
-      <StickyHeader />
+
+      <StickyHeader/>
       <div className='header__img-bg'>
       <img className='header__img' src='/girl-and-pet.svg' alt="home image" />
       </div>

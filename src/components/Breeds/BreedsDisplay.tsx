@@ -5,6 +5,8 @@ import './Display.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addCats, changeArrayType, getAllCats, getArrayType, getImgArray } from '../../features/cats/catSlice'
 import Dropdown from './Dropdown'
+import { useMediaQuery } from 'react-responsive'
+import CustomGridMobile from '../CustomGrid/CustomGridMobile'
 
 
 
@@ -12,6 +14,8 @@ const BreedsDisplay = () => {
   const catsprev = useSelector(getAllCats)
   const arrayType = useSelector(getArrayType)
   const imgArray = useSelector(getImgArray)
+
+  const isMobile = useMediaQuery({ query: '(max-width: 725px)' })
 
   //because the api is broken and some element dont have an image
   const cats:any = []
@@ -80,7 +84,8 @@ const BreedsDisplay = () => {
         <img src="/b-a.svg" alt="" />
       </button>
       </div>
-      <CustomGrid images={arrayType === 'full' ? imgsfull : imgs} breeds={arrayType === 'full' ? breednames : breednamesingle} />
+      {isMobile ? <CustomGridMobile  images={arrayType === 'full' ? imgsfull : imgs} breeds={arrayType === 'full' ? breednames : breednamesingle}/> 
+      : <CustomGrid images={arrayType === 'full' ? imgsfull : imgs} breeds={arrayType === 'full' ? breednames : breednamesingle} />}
     </div>
   )
 }

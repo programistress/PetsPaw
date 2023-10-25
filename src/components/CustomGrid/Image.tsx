@@ -29,17 +29,6 @@ const Image = (props: ImgProps) => {
         </div>
       )
     }
-     else {
-      return (
-        <div className='img__card'>
-            <img className={props.imgClassName} src={props.image} />
-          <div className='card__info'>
-            <div className={props.overlay}></div>
-          </div>
-        </div>
-      )
-    }
-
   }
 }
 

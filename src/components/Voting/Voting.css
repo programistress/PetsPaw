@@ -94,7 +94,7 @@
 
 .img__container {
   position: relative;
-  margin-bottom: 52px;
+  margin-bottom: 40px;
 }
 
 .voting__img-next {
@@ -235,3 +235,130 @@
 }
 
 
+@media screen and (max-width: 725px) {
+  .search__input {
+    width: 346px;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .voting__img {
+    width: 517px;
+  }
+  .voting__img-next {
+    width: 517px;
+  }
+}
+
+.container {
+  margin: 30px auto;
+  max-width: 1440px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  padding: 30px 30px 30px 147px;
+}
+
+.action__display-wrapper {
+  width: 680px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.action__header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action__header-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--light-coral);
+  background-image: url(/public/arrowleft.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+
+.action__header-btn:hover {
+  background: var(--coral);
+  background-image: url(/public/arrowleftwhite.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.action__header-title {
+  border-radius: 10px;
+  background: var(--coral);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  height: 40px;
+  letter-spacing: 2px;
+  padding: 5px 30px;
+}
+
+.topmenu__emojis {
+  display: flex;
+  gap: 10px;
+}
+
+@media screen and (min-width: 2000px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .action__display-wrapper {
+    width: 556px;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .action__display-wrapper {
+    width: 335px;
+  }
+  .search__input {
+    width: 335px;
+  }
+
+  .searchbar {
+    order: 2;
+  }
+
+  .topmenu {
+    flex-direction: column;
+  }
+
+  .topmenu__emojis {
+    order: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .topmenu_btn {
+    width: 100px;
+  }
+}

@@ -5,8 +5,9 @@ import SearchElement from './Search/SearchElement';
 const TopMenu = () => {
   
   return (
-    <div className='topmenu'>  
+    <div className='topmenu'>
       <SearchElement />
+      <div className='topmenu__emojis'>
       <Link to={`/likes`}>
         <button className='topmenu_btn'>
           <img src="/like.svg" alt="" />
@@ -22,6 +23,7 @@ const TopMenu = () => {
           <img src="/dislike.svg" alt="" />
         </button>
       </Link>
+      </div>
     </div>
   )
 }
