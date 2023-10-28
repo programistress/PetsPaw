@@ -14,8 +14,8 @@
 .dropdown__btn {
   z-index: 10;
   border-radius: 10px;
-  background: #F8F8F7;
-  color: #8C8C8C;
+  background: #f8f8f7;
+  color: #8c8c8c;
   padding: 8px 10px;
   font-size: 16px;
   line-height: 24px;
@@ -27,11 +27,10 @@
 }
 
 .dropdown__btn h3 {
-  color: #8C8C8C;
+  color: #8c8c8c;
   font-weight: normal;
   font-size: 16px;
 }
-
 
 .dropdown__params {
   display: flex;
@@ -81,10 +80,10 @@
   height: 40px;
   padding: 10px;
   border-radius: 10px;
-  background: #F8F8F7;
+  background: #f8f8f7;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .alphabet__btn2 {
@@ -94,8 +93,8 @@
   height: 40px;
   padding: 10px;
   border-radius: 10px;
-  background: #F8F8F7;
+  background: #f8f8f7;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 }

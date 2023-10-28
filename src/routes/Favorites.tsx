@@ -1,34 +1,35 @@
-import React from 'react'
-import StickyHeader from '../components/StickyHeader'
-import TopMenu from '../components/TopMenu'
-import { favoritedArray } from '../components/Voting/VotingDisplay'
-import ActionHeader from '../components/Actions/ActionHeader'
-import CustomGrid from '../components/CustomGrid/CustomGrid'
-import { useMediaQuery } from 'react-responsive'
-import CustomGridMobile from '../components/CustomGrid/CustomGridMobile'
+import React from "react";
+import StickyHeader from "../components/StickyHeader";
+import TopMenu from "../components/TopMenu";
+import { favoritedArray } from "../components/Voting/VotingDisplay";
+import ActionHeader from "../components/Actions/ActionHeader";
+import CustomGrid from "../components/CustomGrid/CustomGrid";
+import { useMediaQuery } from "react-responsive";
+import CustomGridMobile from "../components/CustomGrid/CustomGridMobile";
 
 const Favorites = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 725px)' })
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1201px)' })
+  const isMobile = useMediaQuery({ query: "(max-width: 725px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1201px)" });
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       {isBigScreen && <StickyHeader />}
-      <div className='flexcolumn'>
-      <TopMenu />
-      <div className='action__display-wrapper'>
-        <ActionHeader title='favorites' />
-        {favoritedArray.length > 0 ? (
-          isMobile ? <CustomGridMobile images={favoritedArray}/> :
-               <CustomGrid images={favoritedArray}/>
+      <div className="flexcolumn">
+        <TopMenu />
+        <div className="action__display-wrapper">
+          <ActionHeader title="favorites" />
+          {favoritedArray.length > 0 ? (
+            isMobile ? (
+              <CustomGridMobile images={favoritedArray} />
             ) : (
-             <div className='noitem__message'>
-              No item here yet.
-             </div>
-            )}
-    </div>
+              <CustomGrid images={favoritedArray} />
+            )
+          ) : (
+            <div className="noitem__message">No item here yet.</div>
+          )}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Favorites
+export default Favorites;

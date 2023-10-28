@@ -1,5 +1,3 @@
-
-
 .search__input {
   width: 470px;
   height: 60px;
@@ -10,7 +8,7 @@
   transition: 0.3s;
   color: var(--black);
   font-size: 20px;
-  line-height: 30px; 
+  line-height: 30px;
 }
 
 .search__input::placeholder {
@@ -118,11 +116,11 @@
 }
 
 .votes__btn-like {
-  background-color: #97EAB9;
+  background-color: #97eab9;
   border-radius: 20px 0 0px 20px;
   width: 83px;
   height: 80px;
-  border-width: 3px 2px 3px 3px ;
+  border-width: 3px 2px 3px 3px;
   border-color: #fff;
   border-style: solid;
   background-image: url(/public/likewhite.svg);
@@ -172,10 +170,10 @@
 }
 
 .votes__btn-dislike {
-  background-color: #FFD280;
+  background-color: #ffd280;
   border-radius: 0 20px 20px 0;
   width: 83px;
-  border-width: 3px 3px 3px 2px ;
+  border-width: 3px 3px 3px 2px;
   height: 80px;
   border-color: #fff;
   border-style: solid;
@@ -201,7 +199,7 @@
 .log__wrapper {
   width: 100%;
   height: 60px;
-  background: #F8F8F7;
+  background: #f8f8f7;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -214,7 +212,7 @@
   background: #fff;
   color: var(--black);
   font-size: 16px;
-  line-height: 24px; 
+  line-height: 24px;
   padding: 3px 10px;
 }
 
@@ -222,7 +220,7 @@
   text-align: left;
   width: 490px;
   font-weight: 400;
-  color: #8C8C8C; 
+  color: #8c8c8c;
 }
 
 .id {
@@ -233,7 +231,6 @@
 .log__wrapper img {
   width: 20px;
 }
-
 
 @media screen and (max-width: 725px) {
   .search__input {

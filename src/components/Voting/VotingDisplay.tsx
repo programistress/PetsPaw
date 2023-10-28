@@ -1,112 +1,122 @@
-import React, { useEffect, useState } from 'react'
-import ActionHeader from '../Actions/ActionHeader'
-import LogComponent from './LogComponent'
-import { useSelector } from 'react-redux'
-import { getVotingCats } from '../../features/cats/catSlice'
+import React, { useEffect, useState } from "react";
+import ActionHeader from "../Actions/ActionHeader";
+import LogComponent from "./LogComponent";
 
-export const likedArray:Array<any> = []
-export const dislikedArray:Array<any> = []
-export const favoritedArray:Array<any> = []
+export const likedArray: Array<any> = [];
+export const dislikedArray: Array<any> = [];
+export const favoritedArray: Array<any> = [];
 
 const VotingDisplay = () => {
-  const [favorite, setFavorite] = useState(false)
-  const [logs, setLogs] = useState<any>([])
+  const [favorite, setFavorite] = useState(false);
+  const [logs, setLogs] = useState<any>([]);
+  const [cats, setCats] = useState([]);
 
-    const catsprev = useSelector(getVotingCats)
-    //because the api is broken and some element dont have an image
-    const cats:any = []
-    catsprev.map((element) => {
-      if(element.hasOwnProperty('image')){
-        cats.push(element)
-      }
-    })
-   
-    const imgs = cats.map((item) => (item.image.url))
-    const ids = cats.map((item) => (item.id))
-    const [activeIndex, setActiveIndex] = useState(0);
-    const nextImgIndex = activeIndex === cats.length - 1 ? 0 : activeIndex + 1
+  async function fetchCats() {
+    await fetch("https://api.thecatapi.com/v1/breeds/?limit=67", {
+      headers: {
+        "x-api-key":
+          "live_IvsY9IWZY2HevmQgUSlWy0ewC7J8szAIw2I0NWsSBkZ0TWuRyspIvq92umxAziyE",
+      },
+    }).then((response) =>
+      response.json().then((data) => ({
+        data: setCats(data),
+        status: response.status,
+      }))
+    );
+  }
 
-    let date = new Date(); 
-    const hh = date.getHours();
-    const mm = date.getMinutes();
+  useEffect(() => {
+    fetchCats();
+  }, []);
 
+  const imgs = cats.map((item) => item.image?.url);
+  const ids = cats.map((item) => item.id);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const nextImgIndex = activeIndex === cats.length - 1 ? 0 : activeIndex + 1;
 
-    const newLogLike = {
-      imgID: ids[activeIndex],
-      hours: hh,
-      minutes: mm,
-      actionName: 'Likes',
-      iconSrc: '/like-color-30.svg'
+  const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+  const newLogLike = {
+    imgID: ids[activeIndex],
+    time: time,
+    actionName: "Likes",
+    iconSrc: "/like-color-30.svg",
+  };
+
+  const newLogDislike = {
+    imgID: ids[activeIndex],
+    time: time,
+    actionName: "Disikes",
+    iconSrc: "/dislike-color-30.svg",
+  };
+
+  const newLogFavorite = {
+    imgID: ids[activeIndex],
+    time: time,
+    actionName: "Favorites",
+    iconSrc: "/heart.svg",
+  };
+
+  const likeButton = () => {
+    setFavorite(false);
+    setActiveIndex(nextImgIndex);
+    if (likedArray.includes(imgs[activeIndex])) {
+      return;
     }
+    likedArray.push(imgs[activeIndex]);
+    setLogs([...logs, newLogLike]);
+  };
 
-    const newLogDislike = {
-      imgID: ids[activeIndex],
-      hours: hh,
-      minutes: mm,
-      actionName: 'Disikes',
-      iconSrc: '/dislike-color-30.svg'
+  const dislikeButton = () => {
+    setFavorite(false);
+    setActiveIndex(nextImgIndex);
+    if (dislikedArray.includes(imgs[activeIndex])) {
+      return;
     }
+    dislikedArray.push(imgs[activeIndex]);
 
-    const newLogFavorite = {
-      imgID: ids[activeIndex],
-      hours: hh,
-      minutes: mm,
-      actionName: 'Favorites',
-      iconSrc: '/heart.svg'
-    }
-  
+    setLogs([...logs, newLogDislike]);
+  };
 
-    const likeButton = () => {
-      setFavorite(false)
-      setActiveIndex(nextImgIndex)
-      if (likedArray.includes(imgs[activeIndex])) {
-        return
-      }
-      likedArray.push(imgs[activeIndex])
-      setLogs([...logs, newLogLike])
+  const favoriteButton = () => {
+    setFavorite(true);
+    if (favoritedArray.includes(imgs[activeIndex])) {
+      return;
     }
-
-    const dislikeButton = () => {
-      setFavorite(false)
-      setActiveIndex(nextImgIndex)
-      if (dislikedArray.includes(imgs[activeIndex])) {
-        return
-      }
-      dislikedArray.push(imgs[activeIndex])
-
-      setLogs([...logs, newLogDislike])
-    }
-    
-    const favoriteButton = () => {
-      setFavorite(true)
-      if (favoritedArray.includes(imgs[activeIndex])) {
-        return
-      }
-      favoritedArray.push(imgs[activeIndex])
-      setLogs([...logs, newLogFavorite])
-    }
+    favoritedArray.push(imgs[activeIndex]);
+    setLogs([...logs, newLogFavorite]);
+  };
 
   return (
-    <div className='action__display-wrapper'>
-      <ActionHeader title='voting' />
+    <div className="action__display-wrapper">
+      <ActionHeader title="voting" />
       <div className="img__container">
-        <img key={activeIndex} className='voting__img' src={imgs[activeIndex]} alt="" />
-        <img key={nextImgIndex} className='voting__img-next' src={imgs[nextImgIndex]} alt="" />
+        <img
+          key={activeIndex}
+          className="voting__img"
+          src={imgs[activeIndex]}
+          alt=""
+        />
+        <img
+          key={nextImgIndex}
+          className="voting__img-next"
+          src={imgs[nextImgIndex]}
+          alt=""
+        />
         <div className="votes__container">
-          <button className='votes__btn-like'
-          onClick={likeButton}> 
-          </button>
-          <button className={favorite ? 'votes__btn-fav-active'  : 'votes__btn-fav'}
-          onClick={favoriteButton}>
-          </button>
-          <button className='votes__btn-dislike'
-          onClick={dislikeButton}>
-          </button>
+          <button className="votes__btn-like" onClick={likeButton}></button>
+          <button
+            className={favorite ? "votes__btn-fav-active" : "votes__btn-fav"}
+            onClick={favoriteButton}
+          ></button>
+          <button
+            className="votes__btn-dislike"
+            onClick={dislikeButton}
+          ></button>
         </div>
       </div>
-      <LogComponent logs={logs}/>
+      <LogComponent logs={logs} />
     </div>
-  )
-}
+  );
+};
 
-export default VotingDisplay
+export default VotingDisplay;

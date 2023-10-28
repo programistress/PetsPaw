@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 type ActionProps = {
@@ -10,32 +10,19 @@ type ActionProps = {
   readonly link: string;
 };
 
-export function ActionItem(props: ActionProps ){
-  const {
-    name,
-    src,
-    alt,
-    imageClassName,
-    backgroundClassName,
-    link
-  } = props;
-  
+export function ActionItem(props: ActionProps) {
+  const { name, src, alt, imageClassName, backgroundClassName, link } = props;
+
   return (
     <div className="action">
       <Link to={link}>
-      <div className={backgroundClassName}>
-        <img {...{ src, alt }}  
-        className={imageClassName} />
-      </div>
+        <div className={backgroundClassName}>
+          <img {...{ src, alt }} className={imageClassName} />
+        </div>
       </Link>
       <Link to={link}>
-      <button className={'action__btn'}>
-        {name}
-      </button>
+        <button className={"action__btn"}>{name}</button>
       </Link>
     </div>
   );
-};
-
-
-
+}

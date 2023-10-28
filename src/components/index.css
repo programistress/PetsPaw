@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 :root {
- --light-grey: #8C8C8C;
- --black: #1D1D1D;
- --coral: #FF868E;
- --light-coral: #FBE0DC;
+  --light-grey: #8c8c8c;
+  --black: #1d1d1d;
+  --coral: #ff868e;
+  --light-coral: #fbe0dc;
 }
 
 body {
-  background: #F8F8F7;
+  background: #f8f8f7;
 }
 * {
   margin: 0;
@@ -17,20 +17,26 @@ body {
   font-family: Jost, sans-serif;
 }
 
-a, a:link, a:visited, a:hover  {
+a,
+a:link,
+a:visited,
+a:hover {
   text-decoration: none;
 }
 
-ul, ul li {
-	list-style: none;
+ul,
+ul li {
+  list-style: none;
 }
 
-img, svg {
-	max-width: 100%;
-	height: auto;
+img,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
-button, input {
+button,
+input {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -43,6 +49,5 @@ button, input {
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
