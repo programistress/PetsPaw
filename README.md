@@ -1,7 +1,7 @@
 **Link to a working website:**
 https://pets-paw-indol.vercel.app
 
-Key Features:
+**Key Features:**
 
 **Cat Data Fetching:** My website elegantly fetches and displays an extensive array of data about cats. From their fascinating histories to their diverse breeds, each page is a purrfect repository of knowledge.
 
