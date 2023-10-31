@@ -359,3 +359,27 @@
     width: 100px;
   }
 }
+
+
+@media screen and (min-width: 2000px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    padding: 30px 30px 30px 30px;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+}
+

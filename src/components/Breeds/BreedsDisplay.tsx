@@ -31,7 +31,9 @@ const BreedsDisplay = () => {
 
   const imgsfull = cats.map((item) => item.image?.url);
   const breednames = cats.map((item) => item.name);
+  const ids = cats.map((item) => item.id.length > 5 ? item.breeds[0].id : item.id);
   const imgs = cats.map((item) => item.url);
+
 
   const alphabetA2Z = async () => {
     if (arrayType === "full") {
@@ -99,6 +101,7 @@ const BreedsDisplay = () => {
         <CustomGrid
           images={arrayType === "full" ? imgsfull : imgs}
           breeds={arrayType === "full" ? breednames : breednamesingle}
+          ids={ids} 
         />
       )}
     </div>

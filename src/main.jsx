@@ -15,6 +15,7 @@ import Dislikes from './routes/Dislikes';
 import Favorites from './routes/Favorites';
 import { Provider } from 'react-redux';
 import { store } from './features/store';
+import CatDetails from './routes/CatDetails';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: '/favorites',
     element: <Favorites />
+  },
+  {
+    path: '/breeds/:id',
+    element: <CatDetails />
   },
 ])
 

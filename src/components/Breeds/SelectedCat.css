@@ -1,0 +1,72 @@
+.selcat__img {
+  width: 540px;
+  height: 310px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.cat__info {
+  padding: 0 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.cat__description {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.desc{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+  color: var(--coral);
+}
+
+.secondpart {
+  width: 50%;
+  line-height: 24px;
+}
+
+.wiki__link {
+  color: var(--light-grey);
+  transition: 0.3s;
+}
+.wiki__link:hover {
+  color: var(--black);
+  transition: 0.3s;
+}
+
+.wikipedia span {
+  font-weight: 600;
+  color: var(--black);
+  margin-right: 2px;
+}
+
+.firstpart {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cat__description span {
+  font-weight: 600;
+  color: var(--black);
+  margin-right: 2px;
+  margin-bottom: 10px;
+}
+
+.wikipedia {
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
