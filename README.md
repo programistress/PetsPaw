@@ -3,7 +3,7 @@ https://pets-paw-indol.vercel.app
 
 Key Features:
 
-Cat Data Fetching: Our website elegantly fetches and displays an extensive array of data about cats. From their fascinating histories to their diverse breeds, each page is a purrfect repository of knowledge.
+**Cat Data Fetching:** Our website elegantly fetches and displays an extensive array of data about cats. From their fascinating histories to their diverse breeds, each page is a purrfect repository of knowledge.
 
 React Magic: The website is built using the power of React, ensuring a seamless, lightning-fast user experience. The dynamic nature of React allows for real-time updates and effortless browsing.
 
